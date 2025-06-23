@@ -1,0 +1,27 @@
+Name: DeployMicroservice
+SchemaVersion: 1.0
+RunMode: QUEUED
+
+Triggers:
+    - Type: PUSH
+      Branches:
+          - dev
+
+Compute:
+    Type: EC2
+
+Actions:
+    TerraformInfraDeploy:
+        Identifier: aws/build@v1
+        Environment:
+            Name: vadev
+        Inputs:
+            Sources:
+                - WorkflowSource
+        Configuration:
+            Container:
+                Registry: DockerHub
+                Image: node:lts
+            Steps:
+                - Run: pwd && echo 'hello world!'
+
