@@ -1,0 +1,43 @@
+{
+    "name": "nestjs",
+    "version": "0.1.0",
+    "private": true,
+    "description": "NestJS starter that uses Prisma for Aurora (mysql) and AWS SDK v3 for DynamoDB.",
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "start": "node dist/main.js",
+        "start:dev": "nest start --watch",
+        "start:prod": "node dist/main.js",
+        "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+        "lint": "eslint \"{src,tests}/**/*.ts\" --max-warnings=0",
+        "prisma:generate": "prisma generate",
+        "prisma:migrate": "prisma migrate dev"
+    },
+    "engines": {
+        "node": ">=18.17.0"
+    },
+    "dependencies": {
+        "@aws-sdk/client-dynamodb": "^3.657.0",
+        "@aws-sdk/lib-dynamodb": "^3.657.0",
+        "@nestjs/common": "^10.0.0",
+        "@nestjs/config": "^3.2.2",
+        "@nestjs/core": "^10.0.0",
+        "@nestjs/platform-express": "^10.0.0",
+        "@prisma/client": "^5.18.0",
+        "class-transformer": "^0.5.1",
+        "class-validator": "^0.14.1",
+        "helmet": "^7.1.0",
+        "joi": "^18.0.1"
+    },
+    "devDependencies": {
+        "@nestjs/cli": "^10.4.5",
+        "@nestjs/schematics": "^10.1.0",
+        "@nestjs/testing": "^10.4.5",
+        "@types/node": "^20.14.12",
+        "prisma": "^5.18.0",
+        "ts-jest": "^29.2.5",
+        "ts-node": "^10.9.2",
+        "tsc-alias": "^1.8.10",
+        "typescript": "^5.6.2"
+    }
+}
